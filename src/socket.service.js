@@ -17,6 +17,6 @@ export const subscribeToChat = (cb) => {
     });
 }
 
-export const myCustomEvent = () => {
+export const myCustomEvent = (cb) => {
     socket.emit('message', 'Moshiur Event');
 }

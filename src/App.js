@@ -1,25 +1,12 @@
-import { useEffect } from 'react';
-import { disconnectSocket, initiateSocketConnection, myCustomEvent, subscribeToChat } from './socket.service';
+import React from 'react'
+import Chat from './components/Chat'
+
 function App() {
-  useEffect(() => {
-    initiateSocketConnection();
-    // Socket event 
-    subscribeToChat((err, data) => {
-      console.log(data);
-    });
-    return () => {
-      disconnectSocket()
-    }
-  }, [])
   return (
     <div>
-      <button onClick={() => {
-        myCustomEvent((err, data) => {
-          console.log(data);
-        })
-      }}>Click</button>
+      <Chat />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
